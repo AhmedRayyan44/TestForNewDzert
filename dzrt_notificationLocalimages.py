@@ -74,7 +74,7 @@ def send_product_data_to_telegram():
             product_url = product_data.get("url", "")
             image_file_path = product_data.get("image_file_path", "")
 
-            if product_status == "غير متوفر" and product_name not in excluded_products:
+            if product_status == "متوفر" and product_name not in excluded_products:
                 current_time = time.time()
                 if product_name in special_products:
                     if (product_name not in sent_products) or (current_time - product_send_times.get(product_name, 0) >= (3 * 600)):
